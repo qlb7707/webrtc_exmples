@@ -8,13 +8,24 @@
  *  be found in the AUTHORS file in the root of the source tree.
  */
 
+// To modify peerconnection to signaling with websocket,
+// we need to apply websockepp in peerconnection_client class (sub class or member)
+// change the type of id, Peers
+// ??remove control_socket_ & hanging_get_ 
+// add a member socketId correpond to the joson of SkyRtc
+//
+//
+//
+//
+
 #ifndef PEERCONNECTION_SAMPLES_CLIENT_PEER_CONNECTION_CLIENT_H_
 #define PEERCONNECTION_SAMPLES_CLIENT_PEER_CONNECTION_CLIENT_H_
 #pragma once
 
 #include <map>
 #include <string>
-
+#include <websocketpp/config/asio.hpp>
+#include <websocketpp/client.hpp>
 #include "webrtc/base/nethelpers.h"
 #include "webrtc/base/physicalsocketserver.h"
 #include "webrtc/base/scoped_ptr.h"
